@@ -1,6 +1,7 @@
-package com.tutorial.main;
+package com.project.first;
 
 public enum ID {
 	Player(),
-	BasicEnemy();
+	BasicEnemy(),
+	Trail();
 }
