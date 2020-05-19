@@ -40,7 +40,7 @@ public class Player extends GameObject{
 		for(int i = 0; i < handler.object.size(); i++) {
 			GameObject tempObject = handler.object.get(i);
 			
-			if(tempObject.getId() == ID.BasicEnemy) { // tempObject는 기본 적
+			if(tempObject.getId() == ID.BasicEnemy || tempObject.getId() == ID.FastEnemy) { // tempObject는 기본 적
 				
 				if(getBounds().intersects(tempObject.getBounds())) {
 					//collision code
