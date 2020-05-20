@@ -5,11 +5,11 @@ import java.awt.Rectangle;
 
 public abstract class GameObject {
 
-	protected int x, y;
+	protected float x, y;
 	protected ID id;
 	protected int velX, velY;
 	
-	public GameObject(int x, int y, ID id) {
+	public GameObject(float x, float y, ID id) {
 		this.x = x;
 		this.y = y;
 		this.id = id;
@@ -26,10 +26,10 @@ public abstract class GameObject {
 		this.y = y;
 	}
 	public int getX() {
-		return x;
+		return (int)x;
 	}
 	public int getY() {
-		return y;
+		return (int)y;
 	}
 	public void setId(ID id) {
 		this.id = id;
