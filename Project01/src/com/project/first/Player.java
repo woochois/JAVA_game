@@ -28,10 +28,10 @@ public class Player extends GameObject{
 		x += velX;
 		y += velY;		
 
-		x = Game.clamp((int)x, 0, Game.WIDTH - 37);
-		y = Game.clamp((int)y, 0, Game.HEIGHT - 60);
+		x = Game.clamp(x, 0, Game.WIDTH - 37);
+		y = Game.clamp(y, 0, Game.HEIGHT - 60);
 		
-		handler.addObject(new Trail((int)x, (int)y, ID.Trail, Color.white, 32, 32, 0.1f, handler));
+		handler.addObject(new Trail(x, y, ID.Trail, Color.white, 32, 32, 0.1f, handler));
 		
 		collision();
 	}
@@ -43,7 +43,7 @@ public class Player extends GameObject{
 			if(tempObject.getId() == ID.BasicEnemy || tempObject.getId() == ID.FastEnemy || tempObject.getId() == ID.SmartEnemy) { // tempObject는 기본 적
 				
 				if(getBounds().intersects(tempObject.getBounds())) {
-					//collision code
+					// 부딪혓을 때 (충돌) 코드
 					HUD.HEALTH -= 2;
 				}
 				
