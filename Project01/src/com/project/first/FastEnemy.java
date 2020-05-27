@@ -13,8 +13,8 @@ public class FastEnemy extends GameObject{
 		
 		this.handler = handler;
 		
-		velX = 2;
-		velY = 9;
+		velX = 9; // 좌우 속도 및 각도
+		velY = 9; // 상하 속도 및 각도
 	}
 
 	public Rectangle getBounds() {
@@ -29,7 +29,7 @@ public class FastEnemy extends GameObject{
 		if(y <= 0 || y >= Game.HEIGHT - 32) velY *= -1;
 		if(x <= 0 || x >= Game.WIDTH - 16) velX *= -1;
 		
-		handler.addObject(new Trail((int)x, (int)y, ID.Trail, Color.cyan, 16, 16, 0.145f, handler));
+		handler.addObject(new Trail((int)x, (int)y, ID.Trail, Color.cyan, 16, 16, 0.2f, handler)); // 0.00f = 잔상 효과 증가 감소 
 		
 	}
 

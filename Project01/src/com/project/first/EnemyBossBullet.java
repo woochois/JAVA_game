@@ -16,7 +16,7 @@ public class EnemyBossBullet extends GameObject{
 		this.handler = handler;
 		
 		velX = (r.nextInt(5 - -5) + -5);
-		velY = 2;
+		velY = 3;
 	}
 
 	public Rectangle getBounds() {
@@ -34,11 +34,11 @@ public class EnemyBossBullet extends GameObject{
 		
 		if(y >= Game.HEIGHT) handler.removeObject(this);
 		
-		handler.addObject(new Trail(x, y, ID.Trail, Color.red, 16, 16, 0.08f, handler));
+		handler.addObject(new Trail(x, y, ID.Trail, Color.darkGray, 16, 16, 0.09f, handler)); // 0.00f = 잔상 효과 증가 감소 
 	}
 
 	public void render(Graphics g) {
-		g.setColor(Color.red);
+		g.setColor(Color.darkGray);
 		g.fillRect((int)x, (int)y, 16, 16);
 		
 	}

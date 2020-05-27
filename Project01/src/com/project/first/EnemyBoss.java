@@ -50,7 +50,7 @@ public class EnemyBoss extends GameObject{
 				velX -= 0.005f; 
 			}
 			
-			velX = Game.clamp(velX, -10, 10);
+			velX = Game.clamp(velX, -10, 10); // 보스 좌우 움직임 제한
 			
 			int spawn = r.nextInt(10); // 총알
 			if(spawn == 0) handler.addObject(new EnemyBossBullet((int)x+48, (int)y+48, ID.BasicEnemy, handler));
@@ -64,7 +64,7 @@ public class EnemyBoss extends GameObject{
 	}
 
 	public void render(Graphics g) {
-		g.setColor(Color.red);
+		g.setColor(Color.darkGray);
 		g.fillRect((int)x, (int)y, 96, 96);
 		
 	}

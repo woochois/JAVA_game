@@ -13,8 +13,8 @@ public class FastestEnemy extends GameObject{
 		
 		this.handler = handler;
 		
-		velX = 1;
-		velY = 11;
+		velX = 13; // 좌우 속도 및 각도
+		velY = 13; // 상하 속도 및 각도
 	}
 
 	public Rectangle getBounds() {
@@ -29,12 +29,12 @@ public class FastestEnemy extends GameObject{
 		if(y <= 0 || y >= Game.HEIGHT - 32) velY *= -1;
 		if(x <= 0 || x >= Game.WIDTH - 16) velX *= -1;
 		
-		handler.addObject(new Trail((int)x, (int)y, ID.Trail, Color.YELLOW, 16, 16, 0.145f, handler));
+		handler.addObject(new Trail((int)x, (int)y, ID.Trail, Color.blue, 16, 16, 0.2f, handler)); // 0.00f = 잔상 효과 증가 감소 
 		
 	}
 
 	public void render(Graphics g) {
-		g.setColor(Color.YELLOW);
+		g.setColor(Color.blue);
 		g.fillRect((int)x, (int)y, 16, 16);
 		
 	}
